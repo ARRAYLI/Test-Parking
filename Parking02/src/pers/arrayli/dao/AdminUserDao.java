@@ -3,6 +3,7 @@ package pers.arrayli.dao;
 import java.sql.SQLException;
 
 import com.arrayli.domain.AdminUser;
+import com.arrayli.domain.UserInfo;
 
 /**
  * @author lzj13
@@ -16,6 +17,8 @@ public interface AdminUserDao {
 	 * @return  登录成功与否
 	 * @throws SQLException
 	 */
-	boolean login(AdminUser user) throws SQLException;
+	boolean login(String usernam,String password) throws SQLException;
+
+	
 }
  

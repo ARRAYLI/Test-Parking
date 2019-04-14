@@ -15,5 +15,5 @@ public interface AdminUserService {
 	 * @return  登录成功与否
 	 * @throws SQLException
 	 */
-	boolean login(AdminUser user) throws SQLException;
+	boolean login(String username,String password) throws SQLException;
 }

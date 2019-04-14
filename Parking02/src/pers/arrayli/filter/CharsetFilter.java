@@ -36,7 +36,11 @@ public class CharsetFilter implements Filter {
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+		// 设置从浏览器获取的数据以 UTF-8 的格式进行编码
 		request.setCharacterEncoding("utf-8");
+		
+		// 设置响应的字符集编码
+		response.setContentType("text/html;charset=utf-8");
 		
 		chain.doFilter(request, response);
 	}

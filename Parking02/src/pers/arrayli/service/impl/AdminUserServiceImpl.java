@@ -15,11 +15,9 @@ import pers.arrayli.service.AdminUserService;
 public class AdminUserServiceImpl implements AdminUserService {
 
 	@Override
-	public boolean login(AdminUser user) throws SQLException {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean login(String username,String password) throws SQLException {
+		AdminUserDao dao = new AdminUserDaoImpl();
+		return dao.login(username,password);
 	}
-
-	
 }
  
