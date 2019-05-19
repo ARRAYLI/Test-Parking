@@ -41,7 +41,8 @@
 
 								<tr>
 
-									<th><i class="require-red">*</i><%=cheFeiPrice.getInfo() %>：</th>
+								<%-- 	<th><i class="require-red">*</i><%=cheFeiPrice.getInfo() %>：</th> --%>
+									<td width="40%"><i class="require-red">*</i><%=cheFeiPrice.getInfo() %>：</td>
 									<td>
 											<input class="common-text required" id="price<%= cheFeiPrice.getId()  %>" value='<%=cheFeiPrice.getPrice()%>' name="price" size="5" type="text"> 元/次
 											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

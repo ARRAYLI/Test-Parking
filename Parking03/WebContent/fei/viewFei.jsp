@@ -31,7 +31,7 @@
 			<div class="result-wrap">
 				<div class="result-content">
 					<form method="post" id="myform" name="myform">
-						<table class="insert-tab" width="100%">
+						<table class="insert-tab" width="100%" >
 							<tbody>
 								<%
 									CheFeiPriceService service = new CheFeiPriceServiceImpl();
@@ -42,8 +42,8 @@
 									
 								%>
 
-								<tr>
-									<th><i class="require-red">*</i><%=cheFeiPrice.getInfo() %>：</th>
+								<tr >
+									<td width="40%"><i class="require-red">*</i><%=cheFeiPrice.getInfo() %>：</td>
 									<td><%=cheFeiPrice.getPrice()%> 元/次</td>
 								</tr>
 
@@ -52,7 +52,7 @@
 									}
 							%>
 								<tr>
-									<th></th>
+									<td></td>
 									<td><input class="btn btn6" onclick="history.go(-1)"
 										value="返回" type="button"></td>
 								</tr>
