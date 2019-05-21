@@ -238,4 +238,14 @@
     <servlet-name>ImportExcelServlet</servlet-name>
     <url-pattern>/ImportExcelServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EchartsServlet</display-name>
+    <servlet-name>EchartsServlet</servlet-name>
+    <servlet-class>pers.arrayli.servlet.EchartsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EchartsServlet</servlet-name>
+    <url-pattern>/EchartsServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

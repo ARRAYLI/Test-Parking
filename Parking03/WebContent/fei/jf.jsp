@@ -155,8 +155,9 @@
 									<th><i class="require-red"></i>停车标准：</th>
 									<td>
 										<input class="common-text required" id="biao" value='<%=cheFeiPrice.getPrice()%>' name="biao" size="5" type="text" readonly="readonly"> 元/次
+										&nbsp;&nbsp;&nbsp;<i class="require-red"></i><%=cheFeiPrice.getInfo() %>
 									</td>
-									<th><i class="require-red"></i><%=cheFeiPrice.getInfo() %></th>
+									<th></th>
 								
 								</tr>
 								<tr>
@@ -167,21 +168,23 @@
 								</tr>
 								<tr>
 									<th><i class="require-red"></i>用户类型：</th>
+									<td>
 									<%
 									 	// 1.如果是vip用户,执行以下代码
 									 	if("vip".equals(userinfo.getType())){
 									%>
-									<th><i class="require-red"></i><%=userinfo.getType()%> 用户,费用以 8 折来计算</th>
+									<i class="require-red"></i><%=userinfo.getType()%> 用户,费用以 8 折来计算
 									<%
 									 	}
 										
 										if("ordinary".equals(userinfo.getType())){
 											
 									%>
-									<th><i class="require-red"></i><%=userinfo.getType()%> 用户，正常缴费</th>	
+									<i class="require-red"></i>(<%=userinfo.getType()%>) 普通用户，正常缴费
 									<%
 										}
 									%>
+									</td>
 								</tr>
 								
 								<tr>

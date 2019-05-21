@@ -38,7 +38,7 @@
 		</div>
 		<div class="search-wrap">
 			<div class="search-content">
-				<form action="<%=path%>/PageListServlet02?currentPage=1" method="post">
+				<form action="<%=path%>/PageListServlet02?currentPage=1&type=admin" method="post">
 					<table class="search-tab">
 						<tr>
 

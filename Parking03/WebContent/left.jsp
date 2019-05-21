@@ -26,9 +26,10 @@ function setMenu(obj){
                 <li>
                     <a href="#" onclick="return setMenu(1)"><i class="icon-font">&#xe003;</i>系统管理</a>
                     <ul class="sub-menu" id="menu1">
-                        <li><a href="<%=path %>/admin/list.jsp">管理员管理</a></li>
-                         <li><a href="<%=path %>/userinfo/list.jsp">用户管理</a></li>
-                      
+                       <%--  <li><a href="<%=path %>/admin/list.jsp">管理员管理</a></li>
+                         <li><a href="<%=path %>/userinfo/list.jsp">用户管理</a></li> --%>
+                       	<li><a href="<%=path %>/PageListServlet02?currentPage=1&type=AdminManager">管理员管理</a></li>
+                         <li><a href="<%=path %>/PageListServlet02?currentPage=1&type=UserManager">用户管理</a></li>
                     </ul>
                 </li>
                 <li>
@@ -40,14 +41,21 @@ function setMenu(obj){
                         <%-- <li><a href="<%=path %>/chewei/cwlist.jsp">车位状态</a></li> --%>
                         <li><a href="<%=path %>/PageListServlet02?currentPage=1&type=status">车位状态</a></li>
                        <%--  <li><a href="<%=path %>/chewei/jflist.jsp">停车缴费</a></li> --%>
-                        <li><a href="<%=path %>/PageListServlet02?currentPage=1&type=payment"">停车缴费</a></li>
+                        <li><a href="<%=path %>/PageListServlet02?currentPage=1&type=payment">停车缴费</a></li>
                        <%--  <li><a href="<%=path %>/cfei/list.jsp">停车记录查询</a></li> --%>
                      <%--    <li><a href="<%=path %>/PageListServlet?currentPage=1&type=admin">停车记录查询</a></li> --%>
                         <li><a href="<%=path %>/PageListServlet02?currentPage=1&type=admin">停车记录查询</a></li>
                    		<li><a href="<%=path %>/upload/ImportExcel.jsp">批量添加车位</a></li>
-                  	
                     </ul>
                 </li>
+                 <li>
+                    <a href="#" onclick="return setMenu(3)"><i class="icon-font">&#xe003;</i>信息展示</a>
+                    <ul class="sub-menu" id="menu3">
+                   		<li><a href="<%=path %>/echarts/BarChart.jsp">停车记录图</a></li>
+                  		<li><a href="<%=path %>/echarts/SectorChart.jsp">车位占用情况图</a></li>
+                    </ul>
+                </li>
+                
                </c:if> 
                
                <c:if test="${type=='用户'}">

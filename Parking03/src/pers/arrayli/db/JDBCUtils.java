@@ -1,6 +1,7 @@
 package pers.arrayli.db;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -36,6 +37,29 @@ public class JDBCUtils {
 	public static Connection getConnection() throws SQLException{
 		return dataSource.getConnection();
 	}
+	
+	/**
+	 * 获取连接对象
+	 * @return
+	 */
+	public static Connection getConn(){
+		Connection conn = null;
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			String url = "jdbc:mysql://localhost:3306/parking03?useUnicode=true&amp;characterEncoding=utf8";
+			String name = "root";
+			String password = "12345678";
+			//静态代码块 ---> 类加载了，就执行。 java.sql.DriverManager.registerDriver(new Driver());
+			//DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+			//DriverManager.getConnection("jdbc:mysql://localhost/test?user=monty&password=greatsqldb");
+			//2. 建立连接 参数一： 协议 + 访问的数据库 ， 参数二： 用户名 ， 参数三： 密码。
+			conn = DriverManager.getConnection(url, name, password);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return conn;
+	}
+	
 	
 	/** 这个方法用于释放数据库的数据的查询连接
 	 * @param con  数据库连接对象

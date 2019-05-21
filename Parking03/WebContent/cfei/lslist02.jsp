@@ -32,7 +32,7 @@
 		</div>
 		<div class="search-wrap">
 			<div class="search-content">
-				<form action="<%=path%>/PageListServlet02?currentPage=1"
+				<form action="<%=path%>/PageListServlet02?currentPage=1&type=user"
 					method="post">
 					<table class="search-tab">
 						<tr>

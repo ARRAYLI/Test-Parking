@@ -13,7 +13,7 @@
 <link href="<%=path%>/inc/logincss.css" rel="stylesheet" type="text/css" />
 <LINK href="<%=path%>/js/jquery/plugin/jquery-easyui/themes/default/easyui.css" type="text/css" rel="stylesheet">
 <LINK href="<%=path%>/js/jquery/plugin/jquery-easyui/themes/icon.css" type="text/css" rel="stylesheet">
-<script type="text/javascript" src="<%=path%>/js/jquery/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="<%=path%>/js/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="<%=path%>/js/jquery/plugin/jquery-easyui/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="<%=path%>/js/jquery/plugin/jquery-easyui/locale/easyui-lang-zh_CN.js"></script>
 <script type="text/javascript" src="<%=path%>/js/jquery/plugin/jquery-easyui/plugins/jquery.window.js"></script>

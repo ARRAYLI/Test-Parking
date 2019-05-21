@@ -12,9 +12,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import pers.arrayli.domain.AdminUser;
 import pers.arrayli.domain.CheFei;
 import pers.arrayli.domain.CheWei;
 import pers.arrayli.domain.PageBean;
+import pers.arrayli.domain.UserInfo;
 import pers.arrayli.service.CheFeiService;
 import pers.arrayli.service.impl.CheFeiServiceImpl;
 import pers.arrayli.utils.ResultUtils;
@@ -161,6 +163,43 @@ public class PageListServlet02 extends HttpServlet {
 				pageBean.setTotalPage(res.getCheWeiTotalPage());
 				pageBean.setTotalSize(res.getCheWeiTotalSize());
 				
+			}else if("AdminManager".equals(type)){  // 分页显示管理员用户信息
+				// 获取jsp页面上的查询关键字
+				// 按管理员名字查询关键字
+				String AdminUserName = request.getParameter("queryName");
+				
+				// 2. 获取查询结果集
+				ResultUtils res = new ResultUtils();
+				if(currentPage == 1){
+					res.getAdminUsers(AdminUserName);
+				}
+				List<AdminUser> tempList = res.PageListQueryAdminUsers(currentPage, AdminUserName);
+				System.out.println("============================2==================");
+				pageBean = new PageBean();
+				pageBean.setCurrentPage(currentPage);
+				pageBean.setList(tempList);
+				pageBean.setPageSize(res.getAdminUsersPageSize());
+				pageBean.setTotalPage(res.getAdminUsersTotalPage());
+				pageBean.setTotalSize(res.getAdminUsersTotalSize());
+				
+			}else if("UserManager".equals(type)){   // 分页显示普通用户信息
+				// 获取jsp页面上的查询关键字
+				// 获取用户名字查询条件
+				String UserName = request.getParameter("queryName");
+				
+				// 2. 获取查询结果集
+				ResultUtils res = new ResultUtils();
+				if(currentPage == 1){
+					res.getUserInfos(UserName);
+				}
+				List<UserInfo> tempList = res.PageListQueryUserInfos(currentPage, UserName);
+				System.out.println("============================2==================");
+				pageBean = new PageBean();
+				pageBean.setCurrentPage(currentPage);
+				pageBean.setList(tempList);
+				pageBean.setPageSize(res.getUserInfosPageSize());
+				pageBean.setTotalPage(res.getUserInfosTotalPage());
+				pageBean.setTotalSize(res.getUserInfosTotalSize());
 			}
 				
 			
@@ -200,6 +239,10 @@ public class PageListServlet02 extends HttpServlet {
 				request.getRequestDispatcher("chewei/jflist02.jsp").forward(request, response);
 			}else if("UserCheWeiInfo".equals(type)){
 				request.getRequestDispatcher("chewei/tlist02.jsp").forward(request, response);
+			}else if("AdminManager".equals(type)){  // 分页显示管理员用户信息
+				request.getRequestDispatcher("admin/list02.jsp").forward(request, response);
+			}else if("UserManager".equals(type)){   // 分页显示普通用户信息
+				request.getRequestDispatcher("userinfo/list02.jsp").forward(request, response);
 			}
 			
 			//response.sendRedirect("cfei/lslist.jsp");
